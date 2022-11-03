@@ -1,6 +1,6 @@
 # Building-a-Celestial-Bodies-Database-freecodecamp-project-
 This is one of the projects required for certification for the Relational Database course.
-The project entails the creation of a *celestial bodies database (universe)* using Postgres SQL and Bash shell.
+The project entails the creation of a *celestial bodies database* using Postgres SQL and Bash shell.
 The listed tasks have to be done to complete the project :
 
  *  You should create a database named universe
