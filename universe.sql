@@ -122,8 +122,8 @@ ALTER SEQUENCE public.galaxy_galaxy_id_seq OWNED BY public.galaxy.galaxy_id;
 CREATE TABLE public.moon (
     moon_id integer NOT NULL,
     name character varying(25) NOT NULL,
-    distance_from_earth numeric,
-    orbit_period numeric NOT NULL,
+    distance_from_their_planet numeric,
+    orbit_period_in_earth_days numeric NOT NULL,
     planet_id integer
 );
 
@@ -288,12 +288,44 @@ INSERT INTO public.galaxy VALUES (6, 'Flotilla', 3, 12300, 'spiral');
 -- Data for Name: moon; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.moon VALUES (1, 'Moon', 384400, 29, 4);
+INSERT INTO public.moon VALUES (2, 'Phobos', 734400, 35, 5);
+INSERT INTO public.moon VALUES (3, 'Deimos', 700400, 20, 5);
+INSERT INTO public.moon VALUES (4, 'Jupiter I', 659800, 234, 6);
+INSERT INTO public.moon VALUES (5, 'Europa', 59800, 92, 6);
+INSERT INTO public.moon VALUES (6, 'Ganymede', 907050, 453, 6);
+INSERT INTO public.moon VALUES (7, 'Callisto', 850345, 135, 6);
+INSERT INTO public.moon VALUES (8, 'Titan', 765345, 435, 7);
+INSERT INTO public.moon VALUES (9, 'Pandora', 908760, 657, 7);
+INSERT INTO public.moon VALUES (10, 'Dione', 456234, 576, 7);
+INSERT INTO public.moon VALUES (11, 'Rhea', 937593, 675, 7);
+INSERT INTO public.moon VALUES (12, 'Prometheus', 387593, 623, 7);
+INSERT INTO public.moon VALUES (13, 'Epimetheus', 2567593, 2350, 7);
+INSERT INTO public.moon VALUES (14, 'Pan', 5560593, 509, 7);
+INSERT INTO public.moon VALUES (15, 'Helena', 70593, 665, 7);
+INSERT INTO public.moon VALUES (16, 'Gunnlod', 93245, 65, 7);
+INSERT INTO public.moon VALUES (18, 'Titania', 654245, 92, 9);
+INSERT INTO public.moon VALUES (19, 'Oberon', 564245, 290, 9);
+INSERT INTO public.moon VALUES (20, 'Caliban', 93538, 167, 9);
+INSERT INTO public.moon VALUES (21, 'Cressida', 97467, 732, 9);
 
 
 --
 -- Data for Name: planet; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.planet VALUES (1, 'Mercury', false, true, 4, 'This is the first planet of the solar system. It is closest planet to the sun', 1);
+INSERT INTO public.planet VALUES (2, 'Venus', false, true, 3, 'It is the second planet of the solar system. It is the hottest planet of the Solar System and a day on Venus is longer that a year', 1);
+INSERT INTO public.planet VALUES (4, 'Earth', true, true, 2, 'This is the only planet in the solar system. It has an atmosphere ,rich in Nirogen and Oxygen', 1);
+INSERT INTO public.planet VALUES (5, 'Mars', true, false, 2, 'This is fourth planet in the solar system.It has lower gravity than Earth ', 1);
+INSERT INTO public.planet VALUES (6, 'Jupiter', true, false, 1, 'This is fifth planet of the solar system. It is also the biggest planet of the solar system ', 1);
+INSERT INTO public.planet VALUES (7, 'Saturn', true, false, 1, 'This is sixth planet of the solar system.Saturn has the biggest and the brightest rings in the solar system ', 1);
+INSERT INTO public.planet VALUES (9, 'Uranus', true, false, 1, 'This is seventh planet of the solar system. It also has rings and is the coldest planet in the solar system ', 1);
+INSERT INTO public.planet VALUES (10, 'Neptune', true, false, 1, 'This is the eight planet of the solar system. It is a gas giant.It also has very faint rings', 1);
+INSERT INTO public.planet VALUES (11, 'Arrakis', true, true, 3, 'This is a desert planet in the alpha centauri star system. ', 2);
+INSERT INTO public.planet VALUES (12, 'Xandar', true, true, 3, 'A very famous planet in its star system and home to the Nova Corps', 3);
+INSERT INTO public.planet VALUES (13, 'Krypton', true, true, 3, 'Ruled by the house of El,this planet revolves around a red giant and is on the verge of complete destruction', 2);
+INSERT INTO public.planet VALUES (14, 'Skaro', true, true, 5, 'Home to the species known as the Daleks', 6);
 
 
 --
@@ -326,14 +358,14 @@ SELECT pg_catalog.setval('public.galaxy_galaxy_id_seq', 6, true);
 -- Name: moon_moon_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.moon_moon_id_seq', 1, false);
+SELECT pg_catalog.setval('public.moon_moon_id_seq', 21, true);
 
 
 --
 -- Name: planet_planet_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.planet_planet_id_seq', 1, false);
+SELECT pg_catalog.setval('public.planet_planet_id_seq', 14, true);
 
 
 --
